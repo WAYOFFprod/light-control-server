@@ -9,6 +9,7 @@ const port = process.env.PORT || 8000;
 
 const db = mongoose.connect(dbconf.localUrl);
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./app/routes')(app, db);
