@@ -1,5 +1,18 @@
+import express from 'express';
+const router = express.Router()
+
 import lightRoutes from './light_routes'
-module.exports = function(app, db) {
-  lightRoutes(app, db);
-  // Other route groups could go here, in the future
-};
+
+
+router.use(function (req, res, next) {
+  // console.log('Time:', Date.now())
+  next()
+})
+router.get('/', (req, res) => {
+  console.log('hiii');
+  res.send('hi back');
+});
+
+router.use('/light', lightRoutes);
+
+module.exports = router;
