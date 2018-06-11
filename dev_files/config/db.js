@@ -1,4 +1,4 @@
 module.exports = {
   remoteUrl : 'mongodb://127.0.0.1:27017/LightControl',
-  localUrl: 'mongodb://server:pass@localhost:27017/light-control-server'
+  localUrl: 'mongodb://light-server:light-pass@localhost:27017/light-control-server'
 };
