@@ -28,6 +28,8 @@ var port = process.env.PORT || 8000;
 
 var db = _mongoose2.default.connect(_db2.default.localUrl);
 
+app.get('/', (req, res) => res.send('Hello World!'))
+
 app.use(_bodyParser2.default.json());
 app.use(_bodyParser2.default.urlencoded({ extended: true }));
 app.use('/api', _routes2.default);
