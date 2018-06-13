@@ -2,6 +2,7 @@ import express from 'express';
 const router = express.Router()
 
 import lightRoutes from './light_routes'
+import controllerRoutes from './controller_routes'
 
 
 router.use(function (req, res, next) {
@@ -14,5 +15,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/light', lightRoutes);
+router.use('/controller', controllerRoutes);
 
 module.exports = router;
