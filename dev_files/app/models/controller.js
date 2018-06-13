@@ -5,8 +5,8 @@ var Schema = mongoose.Schema;
 var ControllerModelSchema = new Schema({
     id: Number
     name: String,
-    controller_type: {type: String, enum: ['software', 'hardware']}
-    controller_model: {type: String, enum: ['simple', 'toggle'] }
+    controller_type: {type: String, enum: ['software', 'hardware']},
+    controller_model: {type: String, enum: ['simple', 'toggle'] },
     status: String,
     ip: {
       type: Schema.Types.Mixed,

@@ -6,13 +6,6 @@ import axios from '../../config/axios';
 var controllers = []
 router.post('/connect', (req, res) => {
   console.log("connect: ", req.body);
-
-  button = {
-    'name': req.body.name
-    'type': req.body.type
-    'ip': req.body.ip
-  }
-  controllers.push(button);
   res.send(req.body.type + ' connected to the server')
 });
 
