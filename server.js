@@ -7,7 +7,7 @@ const app = express();
 
 const port = process.env.PORT || 8000;
 
-const db = mongoose.connect(dbconf.localUrl);
+const db = mongoose.connect(dbconf.localUrl, { useMongoClient: true, usePushEach: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
