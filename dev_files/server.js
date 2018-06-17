@@ -1,14 +1,15 @@
+import dotenv from 'dotenv'
 import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
-import dbconf from './config/db'
 import apiRouter from './app/routes'
+
+const configFile = dotenv.config();
 
 const app = express();
 
-const port = process.env.PORT || 8000;
-
-const db = mongoose.connect(dbconf.localUrl, {userMongoClient: true});
+const port = process.env.PORT || 8000; 
+const db = mongoose.connect(process.env.DB_URL);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
