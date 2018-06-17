@@ -14,7 +14,7 @@ const db = mongoose.connect(process.env.DB_URL);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api', apiRouter);
-app.get('/', (req, res) => res.send('Welcome to the light control interface!.!'))
+app.get('/', (req, res) => res.send('Welcome to the light control interface!..!'))
 //require('./app/routes')(app, db);
 
 app.listen(port, () => {
