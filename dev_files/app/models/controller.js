@@ -2,8 +2,8 @@ import mongoose from 'mongoose'
 
 var Schema = mongoose.Schema;
 
-var ControllerModelSchema = new Schema({
-    id: Number,
+var ControllerSchema = new Schema({
+    id: mongoose.Types.ObjectId,
     name: String,
     controller_type: {type: String, enum: ['software', 'hardware']},
     controller_model: {type: String, enum: ['simple', 'toggle'] },
@@ -14,4 +14,8 @@ var ControllerModelSchema = new Schema({
       min: 0
     },
     updated: { type: Date, default: Date.now },
+}, {
+  collection: 'controllers'
 });
+
+module.export = mongoose.model('controller', ControllerSchema)

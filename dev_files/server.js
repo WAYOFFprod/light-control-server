@@ -9,7 +9,6 @@ const configFile = dotenv.config();
 const app = express();
 
 const port = process.env.PORT || 8000;
-console.log(process.env.DB_URL);
 const db = mongoose.connect(process.env.DB_URL);
 
 app.use(bodyParser.json());
