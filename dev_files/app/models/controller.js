@@ -9,9 +9,8 @@ var ControllerSchema = new Schema({
       min: 0
     },
     name: String,
-    controller_type: {type: String, enum: ['software', 'hardware']},
-    controller_model: {type: String, enum: ['simple', 'toggle'] },
-    status: String,
+    controller_type: {type: String, enum: ['mobile', 'hardware', 'web']},
+    status: Boolean,
     ip: String,
     updated: { type: Date, default: Date.now },
 }, {

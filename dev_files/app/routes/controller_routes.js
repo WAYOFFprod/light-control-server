@@ -1,24 +1,28 @@
 import express from 'express';
+import ipWare from 'ipware';
 
 import controllerModel from '../models/controller';
 import axios from '../../config/axios';
 
 const router = express.Router();
-
+const getIp = ipWare().get_ip;
 
 var controllers = []
 router.post('/connect', (req, res) => {
-  console.log("connect: ", req.body);
+  var ip = getIp(req);
+  if (ip.clientIp.substr(0, 7) == "::ffff:") {
+    ip.clientIp = ip.clientIp.substr(7)
+  }
+  console.log("connect: ", ip)
+  console.log("hi");
   var controller = {
-    id: req.body.id,
     name: req.body.name,
     controller_type: req.body.controller_type,
-    controller_model: req.body.controller_model,
     status: 'on',
-    ip: req.body.ip
+    ip: ip.clientIp
   }
-  var controllerData = controllerModel (controller);
-  controllerData.save();
+  // var controllerData = controllerModel (controller);
+  // controllerData.save();
   res.send(req.body.type + ' connected to the server')
 });
 
