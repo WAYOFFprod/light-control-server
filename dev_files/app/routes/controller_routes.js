@@ -23,7 +23,7 @@ router.post('/connect', (req, res) => {
   }
   // var controllerData = controllerModel (controller);
   // controllerData.save();
-  res.send(req.body.type + ' connected to the server')
+  res.send({success: true, i_message: "connection to api successful"})
 });
 
 router.get('/hi', (req, res) => {
