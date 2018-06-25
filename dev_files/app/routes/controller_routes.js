@@ -45,7 +45,7 @@ router.get('/:controllerId', (req, res) => {
     .then(data => {
       console.log(data);
       if (data) {
-        res.status(200).json({success: true, i_message: "controller found", controller: data})
+        res.status(200).json({success: true, i_message: "controller found", objects: data})
       } else {
         res.status(404).json({success: false, i_message: "controller not found in database"})
       }
