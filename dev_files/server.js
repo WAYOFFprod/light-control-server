@@ -8,7 +8,7 @@ const configFile = dotenv.config();
 
 const app = express();
 
-const port = process.env.PORT || 8000; 
+const port = process.env.PORT || 8000;
 const db = mongoose.connect(process.env.DB_URL);
 
 app.use(bodyParser.json());

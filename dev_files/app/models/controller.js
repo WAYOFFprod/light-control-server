@@ -1,20 +1,11 @@
 import mongoose from 'mongoose'
 
-var Schema = mongoose.Schema;
-
-var ControllerSchema = new Schema({
-    id: {
-      type: Number,
-      unique: true,
-      min: 0
-    },
-    name: String,
+var ControllerSchema = mongoose.Schema({
+    name: {type: String, unique: true},
     controller_type: {type: String, enum: ['mobile', 'hardware', 'web']},
     status: Boolean,
     ip: String,
-    updated: { type: Date, default: Date.now },
-}, {
-  collection: 'controllers'
+    updated: { type: Date, default: Date.now() },
 });
 
-module.export = mongoose.model('controller', ControllerSchema)
+export default mongoose.model('Controller', ControllerSchema)
