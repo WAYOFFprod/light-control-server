@@ -6,7 +6,7 @@ import controllerRoutes from './controller_routes'
 
 
 router.use(function (req, res, next) {
-  // console.log('Time:', Date.now())
+  console.log('Time:', Date.now(), 'query', req.path);
   next()
 })
 router.get('/', (req, res) => {
