@@ -36,6 +36,7 @@ router.post('/', (req, res) => {
   });
 });
 router.get('/', (req, res, next) => {
+  console.log('getting lights');
   Light.find().populate('state').select('_id alternate_id name light_type color_type dimable ip state').exec().then(data => {
     console.log('worked');
     res.status(200).json({success: true, count: data.length, objects: data})

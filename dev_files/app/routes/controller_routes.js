@@ -9,7 +9,7 @@ const router = express.Router();
 const getIp = ipWare().get_ip;
 
 var controllers = []
-router.post('/', (req, res) => {
+router.post('/connect', (req, res) => {
   var ip = getIp(req);
   if (ip.clientIp.substr(0, 7) == "::ffff:") {
     ip.clientIp = ip.clientIp.substr(7)
