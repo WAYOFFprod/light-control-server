@@ -14,7 +14,6 @@ router.post('/connect', (req, res) => {
   if (ip.clientIp.substr(0, 7) == "::ffff:") {
     ip.clientIp = ip.clientIp.substr(7)
   }
-  console.log("connect: ", typeof ip.clientIp)
   const controller = new Controller ({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,

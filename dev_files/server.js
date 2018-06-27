@@ -3,6 +3,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import apiRouter from './app/routes'
+import favicon from 'serve-favicon'
 
 const configFile = dotenv.config();
 
@@ -11,6 +12,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 const db = mongoose.connect(process.env.DB_URL);
 
+app.use(favicon(__dirname + '/images/favicon.png'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api', apiRouter);
